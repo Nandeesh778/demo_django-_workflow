@@ -24,10 +24,10 @@ jobs:
         fetch-depth: 0
     - name: SonarQube scan
       run: |
-        sonar-scanner \
+        /path/to/sonar-scanner \
           -Dsonar.projectKey=Credflow \
           -Dsonar.sources=. \
-          -Dsonar.host.url=${{secrets.SONAR_HOST_URL}} \
+          -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
           -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
           > sonar_log.txt  # Redirect the output to a file for detailed logs
 
