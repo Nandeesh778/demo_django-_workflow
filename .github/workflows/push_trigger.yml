@@ -25,11 +25,12 @@ jobs:
     - name: SonarQube scan
       run: |
         sonar-scanner \
-          -Dsonar.projectKey=<Credflow> \
+          -Dsonar.projectKey=Credflow \
           -Dsonar.sources=. \
           -Dsonar.host.url=<secrets.SONAR_HOST_UR> \
           -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
           > sonar_log.txt  # Redirect the output to a file for detailed logs
+      shell: bash
 
     # - name: SonarQube Scan
     #   uses: sonarsource/sonarqube-scan-action@master
