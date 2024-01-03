@@ -67,6 +67,7 @@ def convert_html_file_to_pdf(html_file_path, output_file_path, type, output_pdf_
     elif(type == "img"):
         #write a code to convert html to img
         hti.screenshot(html_file=html_file_path,save_as='blue_page.png')
+        print("helloo")
         
 
 if __name__ == "__main__":
