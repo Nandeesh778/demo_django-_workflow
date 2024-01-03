@@ -22,15 +22,11 @@ jobs:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
-    - name: SonarQube scan
-      run: |
-        sonar-scanner \
-          -Dsonar.projectKey=Credflow \
-          -Dsonar.sources=. \
-          -Dsonar.host.url=<secrets.SONAR_HOST_UR> \
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
-          > sonar_log.txt  # Redirect the output to a file for detailed logs
-      shell: bash
+    - name: SonarQube Scan
+      uses: sonarsource/sonarqube-scan-action@master
+      env:
+        SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
+        SONAR_HOST_URL: ${{secrets.SONAR_HOST_URL}}
 
     # - name: SonarQube Scan
     #   uses: sonarsource/sonarqube-scan-action@master
