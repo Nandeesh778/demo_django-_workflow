@@ -23,6 +23,7 @@ jobs:
               -X
               -Dsonar.organization=nandeesh778
               -Dsonar.projectKey=demo_django-_workflow
+              -Dsonar.branch.name=main 
 
 # jobs:
 #   build:
